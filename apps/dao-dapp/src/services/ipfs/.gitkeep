@@ -1,0 +1,11 @@
+# IPFS service implementation
+# Supports multiple pinning providers:
+# - Storacha (via @storacha/client)
+#   Email-based authentication: Users enter email at runtime, use client.login(email) in code
+#   Requires account setup via CLI (storacha login) or console.storacha.network
+# - Pinata (via pinata SDK v2.5.1 - VITE_PINATA_JWT, VITE_PINATA_GATEWAY)
+#   Usage: pinata.upload.public.cid(cid) for pinning existing CIDs
+#   Usage: pinata.files.public.list().cid(cid) for checking pin status
+# - Fleek Platform (via @fleek-platform/sdk/browser - VITE_FLEEK_CLIENT_ID)
+#   Uses ApplicationAccessTokenService for client-side authentication
+# Users can configure which provider(s) to use via environment variables
