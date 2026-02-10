@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ChangeEvent } from 'react'
 import { useStorachaStore } from '../stores'
 
 /**
@@ -22,8 +22,6 @@ export default function StorachaManager() {
     login,
     logout,
     switchAccount,
-    addAccount,
-    removeAccount,
     fetchSpaces,
     createSpace,
     deleteSpace,
@@ -74,7 +72,7 @@ export default function StorachaManager() {
     }
   }
 
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file || !selectedSpace) return
     try {

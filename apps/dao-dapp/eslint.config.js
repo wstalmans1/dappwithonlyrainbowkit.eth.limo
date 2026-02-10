@@ -18,6 +18,7 @@ export default [
         Buffer: 'readonly',
         global: 'readonly',
         alert: 'readonly',
+        confirm: 'readonly',
         TextEncoder: 'readonly',
         TextDecoder: 'readonly',
         setTimeout: 'readonly',
@@ -51,11 +52,14 @@ export default [
         Buffer: 'readonly',
         global: 'readonly',
         alert: 'readonly',
+        confirm: 'readonly',
         TextEncoder: 'readonly',
         TextDecoder: 'readonly',
         setTimeout: 'readonly',
         clearTimeout: 'readonly',
-        fetch: 'readonly'
+        fetch: 'readonly',
+        File: 'readonly',
+        HTMLInputElement: 'readonly'
       }
     },
     plugins: {
@@ -63,7 +67,16 @@ export default [
       '@typescript-eslint': tseslint
     },
     rules: {
-      ...reactHooks.configs.recommended.rules
+      ...reactHooks.configs.recommended.rules,
+      'no-unused-vars': 'off', // Turn off base rule as it conflicts with TypeScript
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true
+        }
+      ]
     }
   },
   {

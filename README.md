@@ -1,5 +1,7 @@
 # DApp Setup (Rookie-friendly)
 
+**Live Frontend:** [https://dappwithonlyrainbowkit.eth.limo](https://dappwithonlyrainbowkit.eth.limo)
+
 **Frontend**: Vite + React 18 + RainbowKit v2 + wagmi v2 + viem + TanStack Query v5 + Tailwind v4  
 **State Management**: Zustand v4 (global state) with Storacha account/space management store  
 **IPFS/IPNS**: Helia v2 (full IPFS node) + @helia/unixfs + @helia/ipns + @libp2p/crypto + @noble/curves  
